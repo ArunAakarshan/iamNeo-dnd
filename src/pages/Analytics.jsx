@@ -6,33 +6,12 @@ import {AiOutlineStar,AiOutlineQuestionCircle,AiOutlineGift} from 'react-icons/a
 import "../index.css"
 import Header from "./header";
 
-const API_URL = "https://api.example.com/random-data"; // Replace with your random API URL
-
-// fake data generator
-
-// const getItems = (count, offset = 0) => {
-//   return axios
-//     .get(`${API_URL}?count=${count}&offset=${offset}`)
-//     .then(response => {
-//       const data = response.data;
-//       return data.map((item, index) => ({
-//         id: `item-${offset + index}-${new Date().getTime()}`,
-//         name: item.name,
-//         city: item.city
-//       }));
-//     })
-//     .catch(error => {
-//       console.error("Error fetching data from API:", error);
-//       return [];
-//     });
-// };
-
 const getItems = (count, offset = 0) =>
   Array.from({ length: count }, (v, k) => k).map(k => ({
     id: `item-${k + offset}-${new Date().getTime()}`,
     // content: `item ${k + offset}`,
-    name:`iam`,
-    city:`NEO`
+    name:`Arun`,
+    city:`AakarshanNEO`
   }));
 
 const reorder = (list, startIndex, endIndex) => {
@@ -81,7 +60,7 @@ const getListStyle = isDraggingOver => ({
 
 function Dashboard() {
   // const [state, setState] = useState([]);
-  const [state, setState] = useState([getItems(4), getItems(3,5)]);
+  const [state, setState] = useState([getItems(4), getItems(5,7)]);
   function onDragEnd(result) {
     const { source, destination } = result;
 
